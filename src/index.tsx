@@ -1,18 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./styles/global.ts";
-import App from "./screens/Onboarding";
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import store from "./store";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle, { theme } from "./styles/global";
+import Router from "./routes"
 
 ReactDOM.render(
 	<Provider store={store}>
 		<ThemeProvider theme={theme}>
         <GlobalStyle />
-			<App />
+			<Router />
 		</ThemeProvider>
 	</Provider>,
 	document.getElementById("root"),

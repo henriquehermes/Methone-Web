@@ -2,19 +2,18 @@ import React from "react";
 
 import {
 	Container,
+	Box,
 	Title,
 	Description,
 	Header,
 	QuestionNumber,
 	Body,
-	Box,
 	Footer,
 	Button,
 	Question,
 	Like,
 	Dislike,
 	StepLevel,
-	Content,
 	QuestionLevel,
 } from "./styles";
 import { QUESTIONS_STRINGS } from "../../language";
@@ -40,32 +39,30 @@ interface Props {
 const QuestionStep: React.FC<Props> = ({ data, nextStep, position }) => {
 	return (
 		<Container>
-			<Header>
-				<Title>{data.category}</Title>
-				<Description>{data.subcategory}</Description>
-			</Header>
-			<Body>
-				<Box>
-					<StepLevel />
-					<Content>
-						<QuestionLevel>{data.difficulty}</QuestionLevel>
-						<Question>{data.question}</Question>
-					</Content>
-				</Box>
+			<Box>
+				<StepLevel />
+				<Header>
+					<Title>{data?.category}</Title>
+					<Description>{data?.subcategory}</Description>
+				</Header>
+				<Body>
+					<QuestionLevel>{data?.difficulty}</QuestionLevel>
+					<Question>{data?.question}</Question>
+				</Body>
 				<QuestionNumber>
 					{QUESTIONS_STRINGS.description}
 					{position}
 					{QUESTIONS_STRINGS.of}10
 				</QuestionNumber>
-			</Body>
-			<Footer>
-				<Button onClick={() => nextStep(TYPE_ANSWER.correct)}>
-					<Like src={Images.likeIcon} />
-				</Button>
-				<Button onClick={() => nextStep(TYPE_ANSWER.incorrect)}>
-					<Dislike src={Images.dislikeIcon} />
-				</Button>
-			</Footer>
+				<Footer>
+					<Button onClick={() => nextStep(TYPE_ANSWER.correct)}>
+						<Like src={Images.likeIcon} />
+					</Button>
+					<Button onClick={() => nextStep(TYPE_ANSWER.incorrect)}>
+						<Dislike src={Images.dislikeIcon} />
+					</Button>
+				</Footer>
+			</Box>
 		</Container>
 	);
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
 import {
@@ -20,6 +21,7 @@ import getQuestions from "../../services/Onboarding";
 
 const Onboarding: React.FC = () => {
 	const dispatch = useDispatch();
+	const history = useHistory();
 
 	async function goToQuestions() {
 		try {
@@ -29,12 +31,7 @@ const Onboarding: React.FC = () => {
 
 			dispatch(setQuestions(response));
 
-			// return navigation.dispatch(
-			//     CommonActions.reset({
-			//         index: 0,
-			//         routes: [{ name: 'Questions' }],
-			//     }),
-			// );
+			return history.push("/questions") 
 		} catch (e) {
 			console.log(e);
 		} finally {
