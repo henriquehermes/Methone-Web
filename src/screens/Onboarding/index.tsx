@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
@@ -9,9 +9,11 @@ import {
 	Header,
 	ImageBackground,
 	Box,
+	CustomModal,
+	ModalBody,
 } from "./styles";
 
-import { ONBOARDING_STRINGS } from "../../language";
+import { ONBOARDING_STRINGS, ERROR_EXCEPTION_STRINGS } from "../../language";
 import { setIsLoading } from "../../store/reducers/general/actions";
 import { setQuestions } from "../../store/reducers/questions/actions";
 
@@ -23,6 +25,8 @@ const Onboarding: React.FC = () => {
 	const dispatch = useDispatch();
 	const history = useHistory();
 
+	const [error, setError] = useState<Boolean | null>(null);
+
 	async function goToQuestions() {
 		try {
 			dispatch(setIsLoading(true));
@@ -31,12 +35,17 @@ const Onboarding: React.FC = () => {
 
 			dispatch(setQuestions(response));
 
-			return history.push("/questions") 
+			return history.push("/questions");
 		} catch (e) {
-			console.log(e);
+			setError(true);
 		} finally {
 			dispatch(setIsLoading(false));
 		}
+	}
+
+	function handleModal() {
+		setError(null);
+		goToQuestions();
 	}
 
 	return (
@@ -53,6 +62,19 @@ const Onboarding: React.FC = () => {
 					onAction={goToQuestions}
 				/>
 			</Box>
+
+			<CustomModal isOpen={!!error} onRequestClose={handleModal}>
+				<ModalBody>
+					<Header>
+						<Title>{ERROR_EXCEPTION_STRINGS.title}</Title>
+						<Description>{ERROR_EXCEPTION_STRINGS.description}</Description>
+					</Header>
+					<CustomButton
+						label={ERROR_EXCEPTION_STRINGS.buttonPrimary}
+						onAction={handleModal}
+					/>
+				</ModalBody>
+			</CustomModal>
 		</Container>
 	);
 };

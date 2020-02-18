@@ -7,7 +7,6 @@ import {
 	Title,
 	Description,
 	Header,
-	Row,
 	Like,
 	Dislike,
 	Questions,

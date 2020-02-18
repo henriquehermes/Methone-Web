@@ -1,4 +1,18 @@
 import styled from "styled-components";
+import Modal from "react-modal";
+
+const customStyles = {
+	content: {
+		top: "50%",
+		left: "50%",
+		right: "auto",
+		bottom: "auto",
+		marginRight: "-50%",
+		transform: "translate(-50%, -50%)",
+		background: "red",
+		zIndex: 999,
+	},
+};
 
 export const Container = styled.div`
 	height: 100%;
@@ -62,4 +76,17 @@ export const ImageBackground = styled.img`
 	@media (max-width: 400px) {
 		display: none;
 	}
+`;
+
+export const CustomModal = styled(Modal).attrs({
+	style: { customStyles },
+	overlayClassName: "Overlay",
+	className: "Modal",
+})``;
+
+export const ModalBody = styled.div`
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	height: 100%;
 `;
