@@ -2,7 +2,7 @@
 
 exports[`components - Button renders correctly 1`] = `
 <button
-  className="sc-AxjAm hBJLha"
+  className="sc-AxjAm cTpLZk"
   disabled={false}
   onClick={[Function]}
 >
@@ -16,7 +16,7 @@ exports[`components - Button renders correctly 1`] = `
 
 exports[`components - Button renders with loading true 1`] = `
 <button
-  className="sc-AxjAm hBJLha"
+  className="sc-AxjAm cTpLZk"
   disabled={true}
   onClick={[Function]}
 >
