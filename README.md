@@ -1,10 +1,10 @@
 ## Built With
 
-- [Expo]
-- [React]
-- [React-Redux]
-- [Redux]
-- [Styled-Components]
+- Expo
+- React
+- React-Redux
+- Redux
+- Styled-Components
 
 ## Available Scripts
 
