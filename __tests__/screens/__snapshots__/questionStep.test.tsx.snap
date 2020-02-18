@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`screens - QuestionStep renders correctly 1`] = `
+<div
+  className="sc-AxjAm iPzjKo"
+>
+  <div
+    className="sc-fznyAO EnZLe"
+  >
+    <div
+      className="sc-fzpans iQTnjG"
+    />
+    <div
+      className="sc-AxirZ dedhls"
+    >
+      <h2
+        className="sc-AxiKw bbkWUD"
+      >
+        Entertainment
+      </h2>
+      <h1
+        className="sc-AxhCb dXWuoR"
+      >
+        Video Games
+      </h1>
+    </div>
+    <div
+      className="sc-AxgMl jdXybX"
+    >
+      <h3
+        className="sc-fzplWN cFPNxj"
+      >
+        hard
+      </h3>
+      <h2
+        className="sc-AxmLO ksgqow"
+      >
+        Unturned originally started as a Roblox game.
+      </h2>
+    </div>
+    <h3
+      className="sc-AxhUy crKbCd"
+    >
+      Question 
+      5
+       of 
+      10
+    </h3>
+    <div
+      className="sc-AxheI eSPeMa"
+    >
+      <button
+        className="sc-Axmtr kVUCYN"
+        onClick={[Function]}
+      >
+        <img
+          className="sc-fzozJi kIPTnD"
+          src={
+            Object {
+              "process": [Function],
+            }
+          }
+        />
+      </button>
+      <button
+        className="sc-Axmtr kVUCYN"
+        onClick={[Function]}
+      >
+        <img
+          className="sc-fzoLsD bPkcit"
+          src={
+            Object {
+              "process": [Function],
+            }
+          }
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
