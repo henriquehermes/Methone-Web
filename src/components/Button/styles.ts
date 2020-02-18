@@ -1,4 +1,13 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
 
 export const Container = styled.button`
 	display: flex;
@@ -10,6 +19,14 @@ export const Container = styled.button`
 	align-items: center;
 	cursor: pointer;
 	z-index: 99;
+	animation: 1.5s ${fadeIn} forwards;
+	opacity: 0;
+
+	transition: transform 0.2s;
+
+	&:hover {
+		transform: scale(1.05);
+	}
 `;
 
 export const ButtonText = styled.h1`

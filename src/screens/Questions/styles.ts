@@ -55,6 +55,11 @@ export const Button = styled.button`
 	box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.1);
 	border: none;
 	cursor: pointer;
+	transition: transform 0.2s;
+
+	&:hover {
+		transform: scale(1.1);
+	}
 `;
 
 export const Question = styled.h2`

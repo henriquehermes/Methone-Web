@@ -1,5 +1,14 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Modal from "react-modal";
+
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
 
 const customStyles = {
 	content: {
@@ -53,12 +62,17 @@ export const Header = styled.div`
 export const Title = styled.h1`
 	font-family: "Montserrat", sans-serif;
 	margin-bottom: 40px;
+	animation: 1.5s ${fadeIn} forwards;
+	opacity: 0;
 `;
 
 export const Description = styled.h2`
 	font-family: "Montserrat", sans-serif;
+	opacity: 0;
 	font-weight: 600;
 	margin-bottom: 20px;
+	animation: 1s ${fadeIn} forwards;
+	animation-delay: 0.7s;
 `;
 
 export const ImageBackground = styled.img`
@@ -68,6 +82,9 @@ export const ImageBackground = styled.img`
 	right: 0px;
 	bottom: 70px;
 	z-index: 1;
+	animation: 1.5s ${fadeIn} forwards;
+	animation-delay: 1s;
+	opacity: 0;
 
 	@media (min-width: 1024px) {
 		height: 50%;
