@@ -6,6 +6,19 @@
 - Redux
 - Styled-Components
 
+## Folder Structure
+
+    .src/
+    ├── components                # Customs/Common components
+    ├── config                    # General configuration
+    ├── language                  # Languages set and configuration
+    ├── models                   
+    ├── screens                   
+    ├── services                  # REST API Calls
+    ├── store                     # Redux
+    ├── styles                    # General styles
+    └── utils                     # Tools
+
 ## Available Scripts
 
 In the project directory, you can run:
