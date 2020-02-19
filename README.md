@@ -1,6 +1,5 @@
 ## Built With
 
-- Expo
 - React
 - React-Redux
 - Redux
